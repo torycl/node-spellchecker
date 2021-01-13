@@ -13,7 +13,8 @@ public:
   HunspellSpellchecker();
   ~HunspellSpellchecker();
 
-  bool SetDictionary(const std::string& language, const std::string& path);
+  bool SetDictionary(const std::string& language);
+  bool SetDictionaryToContents(const unsigned char* data, size_t length);
   std::vector<std::string> GetAvailableDictionaries(const std::string& path);
   std::vector<std::string> GetCorrectionsForMisspelling(const std::string& word);
   bool IsMisspelled(const std::string& word);
@@ -24,10 +25,8 @@ public:
 private:
   Hunspell* hunspell;
   Transcoder *transcoder;
-  Transcoder *toDictionaryTranscoder;
-  Transcoder *fromDictionaryTranscoder;
 };
 
 }  // namespace spellchecker
 
-#endif  // SRC_SPELLCHECKER_HUNSPELL_H_
+#endif  // SRC_SPELLCHECKER_MAC_H_

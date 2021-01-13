@@ -3,7 +3,7 @@
 
 namespace spellchecker {
 
-SpellcheckerImplementation* SpellcheckerFactory::CreateSpellchecker(int spellcheckerType) {
+SpellcheckerImplementation* SpellcheckerFactory::CreateSpellchecker() {
   return new HunspellSpellchecker();
 }
 
